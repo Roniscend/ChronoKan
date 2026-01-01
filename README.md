@@ -1,74 +1,71 @@
-🚀 ChronoKan: The Time-Traveling Kanban Board
-ChronoKan is a modern productivity application that combines the classic efficiency of a Kanban board with "Time Travel" capabilities, allowing users to scrub through their task history and visualize progress over time.
+# ChronoKan
 
-✨ Key Features
-Secure Authentication: Integrated with Firebase Auth for Email/Password and Google One-Tap Sign-in.
+An Android Kanban board application built with Kotlin and Jetpack Compose that supports task state history traversal using a time-indexed board snapshot mechanism.
 
+---
 
-Kanban Workflow: Organizes tasks into Todo, Progress, and Done states.
+## Overview
 
+ChronoKan is a productivity-oriented Android application that implements a Kanban-style workflow with persistent historical state tracking. In addition to standard task movement across columns, the application allows users to navigate through previous board states to analyze task evolution over time.
 
-Time-Travel Scrubber: A persistent history scrubber at the bottom of the screen allows users to "rewind" the board to see previous states of their project.
+The project is built using modern Android development principles with a focus on maintainable architecture, predictable state management, and offline-first persistence.
 
-Superhero Identities: Every user is assigned a unique, consistent Superhero Name generated from their unique Firebase UID.
+---
 
-Reactive UI: Built entirely with Jetpack Compose for a smooth, modern Android experience.
+## Architecture
 
-Local Persistence: Uses Room Database to ensure tasks are saved locally even when offline.
+ChronoKan follows the **MVVM (Model–View–ViewModel)** architecture pattern to ensure separation of concerns and scalability.
 
-🛠️ Tech Stack
-Language: Kotlin
+- **UI Layer**: Declarative UI built with Jetpack Compose
+- **ViewModel Layer**: State management and business logic
+- **Data Layer**: Local persistence using Room with repository abstraction
 
-UI Framework: Jetpack Compose (Material 3)
+The application uses a unidirectional data flow model with coroutine-based asynchronous execution.
 
-Backend: Firebase (Authentication)
+---
 
-Database: Room (Local SQL storage)
+## Features
 
-Navigation: Jetpack Compose Navigation
+- Kanban workflow with Todo, In Progress, and Done columns
+- Time-indexed board state history traversal
+- Offline-first task persistence using Room
+- Firebase Authentication (Email/Password and Google Sign-In)
+- Fully declarative UI with Jetpack Compose
+- Reactive state updates using Kotlin coroutines
 
-Image Loading: Coil (for Google Profile pictures)
+---
 
-Architecture: MVVM (Model-View-ViewModel)
-
-📸 Screenshots
-Login & Security	Kanban Board	Hero Profile
-
-Export to Sheets
-
-🚀 Getting Started
-Prerequisites
-Android Studio Ladybug or newer.
-
-A Firebase project set up in the Firebase Console.
-
-Installation
-Clone the repo:
-
-
-Bash
-git clone https://github.com/Roniscend/ChronoKan.git
-Add Firebase:
-
-Place your google-services.json in the app/ directory.
-
-Configure Google Sign-In:
-Add your default_web_client_id to res/values/strings.xml.
-
-Sync & Run:
-
-Sync Gradle and run the app on an emulator or physical device.
-
-🏗️ Project Structure
-Plaintext
+## Project Structure
 
 com.example.chronokan
-├── data                # Room Database, DAOs, and Repository
+├── data
+│ ├── database # Room database configuration
+│ ├── dao # Data access objects
+│ └── repository # Data repositories
 ├── ui
-│   ├── auth           # LoginScreen, ProfileScreen, AuthViewModel
-│   ├── board          # TaskListScreen, BoardViewModel
-│   ├── navigation     # ChronosNavGraph
-│   └── theme          # Material3 Theme and Color Palette
-└── MainActivity       # App Entry Point & Auth State Logic
- Hero Logic (The "Easter Egg")
-To protect user privacy and add a fun element, ChronoKan uses a custom hashing algorithm on the Firebase UID to assign every user a permanent Superhero name (e.g., Shadow Titan or Iron Nova). This identity is consistent across sessions but unique to the user's account.
+│ ├── auth # LoginScreen, ProfileScreen, AuthViewModel
+│ ├── board # TaskListScreen, BoardViewModel
+│ ├── navigation # ChronosNavGraph
+│ └── theme # Material 3 theme and color palette
+└── MainActivity # Application entry point and auth state handling
+
+## Tech Stack
+
+- **Language**: Kotlin  
+- **UI Framework**: Jetpack Compose (Material 3)  
+- **Architecture**: MVVM  
+- **Local Persistence**: Room Database  
+- **Authentication**: Firebase Auth  
+- **Asynchronous Processing**: Kotlin Coroutines  
+- **Navigation**: Compose Navigation  
+
+---
+
+## Future Scope
+
+- Cross-device sync
+- Board export and analytics
+- Multi-board support
+- Cloud-backed collaboration features
+
+---

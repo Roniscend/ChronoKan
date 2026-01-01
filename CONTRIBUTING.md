@@ -28,7 +28,7 @@ CLONE THE REPOSITORY
 
 
 
-git clone https://github.com/<your-username>/ChronoKan.git
+git clone https://github.com/<your-username>ChronoKan.git
 
 cd ChronoKan
 

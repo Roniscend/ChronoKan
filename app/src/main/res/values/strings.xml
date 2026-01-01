@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ChronoKan</string>
+
+    <string name="default_web_client_id">123456789012-abc123def456.apps.googleusercontent.com</string>
+</resources>
